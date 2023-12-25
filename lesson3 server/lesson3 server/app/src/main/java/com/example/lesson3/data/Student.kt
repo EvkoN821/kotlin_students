@@ -33,7 +33,7 @@ data class Student(
 ){
     val shortName
         get()=lastname+ "  " +
-                (if(firstname.length>0) {"${firstname.subSequence(1,2)}."}else "") +
+                (if(firstname.length>0) {"${firstname.subSequence(0,1)}."}else "") +
                 "  " +
-                (if(middlename.length>0) {"${middlename.subSequence(1,2)}."}else "")
+                (if(middlename.length>0) {"${middlename.subSequence(0,1)}."}else "")
 }

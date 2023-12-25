@@ -24,13 +24,14 @@ class StudentInputFragment : Fragment() {
 
     val binding
         get()=_binding
-
+    var flag = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             val param1 = it.getString(ARG_PARAM1)
-            if (param1==null)
-                student=Student()
+            if (param1==null) {
+                student = Student()
+            }
             else{
                 val paramType= object : TypeToken<Student>(){}.type
                 student = Gson().fromJson<Student>(param1, paramType)
@@ -44,8 +45,9 @@ class StudentInputFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        flag = !(student.shortName.isBlank())
         _binding=FragmentStudentInput2Binding.inflate(inflater,container,false)
-
+        binding.btSave.text = if (flag) "Изменить" else "Добавить"
         val sexArray = resources.getStringArray(R.array.SEX)
         val adapter = ArrayAdapter(requireContext(),
             android.R.layout.simple_spinner_item, sexArray)
@@ -78,7 +80,10 @@ class StudentInputFragment : Fragment() {
             student.firstname = binding.etFirstName.text.toString()
             student.middlename = binding.etPatrName.text.toString()
             student.phone = binding.etPhone.text.toString()
-            AppRepository.getInstance().addStudent(student)
+            if (flag)
+                AppRepository.getInstance().updateStudent(student)
+            else
+                AppRepository.getInstance().addStudent(student)
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
         return binding.root
