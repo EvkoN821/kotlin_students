@@ -84,7 +84,7 @@ class StudentFragment : Fragment(){
 
     private fun editStudent(student: Student? = null){
         (requireActivity() as MainActivityCallbacks).showFragment(NamesOfFragment.STUDENT, student)
-        (requireActivity() as MainActivityCallbacks).newTitle("Группа${viewModel.group!!.name}")
+        (requireActivity() as MainActivityCallbacks).newTitle("Группа  ${viewModel.group!!.name}")
     }
 
     private inner class StudentAdapter(private val items: List<Student>)

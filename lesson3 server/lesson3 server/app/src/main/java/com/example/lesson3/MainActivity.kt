@@ -13,7 +13,7 @@ import com.example.lesson3.fragments.StudentFragment
 import com.example.lesson3.fragments.StudentInputFragment
 import com.example.lesson3.interfaces.MainActivityCallbacks
 import com.example.lesson3.repository.AppRepository
-import java.util.jar.Attributes.Name
+
 
 class MainActivity : AppCompatActivity(), MainActivityCallbacks {
     interface Edit{

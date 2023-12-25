@@ -20,8 +20,9 @@
     <TextView
         android:id="@+id/tvStudentName"
         android:layout_width="182dp"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:text="TextView"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/llStudentButtons"
         app:layout_constraintStart_toEndOf="@+id/ibPhone"

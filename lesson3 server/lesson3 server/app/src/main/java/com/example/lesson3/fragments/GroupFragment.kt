@@ -52,7 +52,7 @@ class GroupFragment : Fragment(), MainActivity.Edit {
 
         viewModel = ViewModelProvider(this).get(GroupViewModel::class.java)
         val ma= (requireActivity() as MainActivityCallbacks)
-        ma.newTitle("ФАКУЛЬТЕТ \"${viewModel.faculty?.name}\"")
+        ma.newTitle("ФАКУЛЬТЕТ  \"${viewModel.faculty?.name}\"")
 
         viewModel.groupList.observe(viewLifecycleOwner
         ) {
