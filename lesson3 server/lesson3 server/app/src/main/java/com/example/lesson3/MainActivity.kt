@@ -130,7 +130,7 @@ class MainActivity : AppCompatActivity(), MainActivityCallbacks {
             NamesOfFragment.GROUP->{
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.fcMain, GroupFragment.getInstance())
+                    .replace(R.id.fcMain, GroupFragment.newInstance())
                     .addToBackStack(null)
                     .commit()
             }

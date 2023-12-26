@@ -304,29 +304,7 @@ class AppRepository {
             })
     }
 
-    fun login(user: User){
-        listAPI.login(user).enqueue(object: Callback<User> {
-            override fun onFailure(call: Call<User>, t: Throwable) {
-                Log.d(TAG, "Ошибка получения списка групп", t)
-            }
 
-            override fun onResponse(
-                call: Call<User>,
-                response: Response<User>
-            ) {
-                if (response.code() == 200) {
-                    //ЛОГИН ТУТ
-//                    myCoroutineScope.launch {
-//                        listDB.deleteAllGroups()
-//                        for (g in items) {
-//                            listDB.insertGroup(g)
-//                        }
-//                    }
-//                    fetchStudents()
-                }
-            }
-        })
-    }
 
 }
 

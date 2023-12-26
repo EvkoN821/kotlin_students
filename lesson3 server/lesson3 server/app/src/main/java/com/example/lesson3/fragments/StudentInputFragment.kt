@@ -53,7 +53,7 @@ class StudentInputFragment : Fragment() {
         flag_validation = true
         if (et1.isBlank() or ! et1.matches(Regex("^[a-zA-Z_]+$"))) {
             binding.etFirstName.requestFocus()
-            binding.etFirstName.setError("необходимо ввести знак действия")
+            binding.etFirstName.setError("Введите корректные данные")
             flag_validation = false
         }
         if (et2.isBlank() or ! et2.matches(Regex("^[a-zA-Z_]+$"))) {
